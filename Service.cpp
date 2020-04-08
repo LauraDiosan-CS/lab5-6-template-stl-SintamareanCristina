@@ -17,6 +17,17 @@ void Service::addElem(Car& c) {
 	r.addElem(c);
 }
 
+/*void Service::addElem(Car& c, int& x) {
+	if (strcmp(c.getStatus(), "ocupat") == 0) cout << "Eroare" << endl;
+	else
+		if (x >= 1) {
+			c.setStatus("ocupat");
+			r.addElem(c);
+			x--;
+		}
+
+}*/
+
 //returneaza toate elementele de tip Car
 list<Car> Service::getAll() {
 	return r.getAll();

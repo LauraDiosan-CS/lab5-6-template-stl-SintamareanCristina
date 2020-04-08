@@ -20,6 +20,7 @@ UI::~UI()
 //afisare meniu
 void UI::printMenu()
 {
+	cout << endl;
 	cout << "1. Adaugare." << endl;
 	cout << "2. Afisare" << endl;
 	cout << "3. Update" << endl;
@@ -40,6 +41,7 @@ void UI::addElem(Service& s)
 	cout << "Status [liber/ocupat]: ";
 	cin >> status;
 	Car c(nume, nr, status);
+	if (strcmp(status, "ocupat") == 0) cout << "Statusul nu poate fi ocupat" << endl;
 	s.addElem(c); n++;
 	cout << "Added!"<<endl;
 	cout << endl;

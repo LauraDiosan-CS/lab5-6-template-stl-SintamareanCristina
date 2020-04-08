@@ -19,6 +19,12 @@ void Repo::delElem(Car c) {
 	if (it != elem.end()) elem.erase(it);
 }
 
+void Repo::delAll() {
+	list<Car>::iterator it;
+	it = elem.begin();
+	while (it != elem.end()) elem.erase(it);
+}
+
 bool Repo::findElem(Car c) {
 	list<Car>::iterator it;
 	it = find(elem.begin(), elem.end(), c);

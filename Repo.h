@@ -17,6 +17,7 @@ public:
 	void addElem(Car);
 	list<Car> getAll();
 	void delElem(Car);
+	void delAll();
 	bool findElem(Car);
 	Car getItemFromPos(int);
 	void updateElem(Car, const char*, const char*, const char*);
