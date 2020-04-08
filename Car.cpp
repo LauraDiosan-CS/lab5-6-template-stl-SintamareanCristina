@@ -1,6 +1,5 @@
 #include "Car.h"
 #include <string.h>
-#include <cstddef>
 #include <ostream>
 
 using namespace std;
@@ -43,9 +42,10 @@ Car::Car(const Car& c)
 		this->numePosesor = new char[strlen(c.numePosesor) + 1];
 		strcpy_s(this->numePosesor, 1 + strlen(c.numePosesor), c.numePosesor);
 	}
-	if (c.nrInmatriculare){
+	if (c.nrInmatriculare) {
 		this->nrInmatriculare = new char[strlen(c.nrInmatriculare) + 1];
-		strcpy_s(this->nrInmatriculare, 1 + strlen(c.nrInmatriculare), c.nrInmatriculare); }
+		strcpy_s(this->nrInmatriculare, 1 + strlen(c.nrInmatriculare), c.nrInmatriculare);
+	}
 	if (c.status) {
 		this->status = new char[strlen(c.status) + 1];
 		strcpy_s(this->status, 1 + strlen(c.status), c.status);
@@ -58,15 +58,15 @@ Car::~Car()
 	if (this->numePosesor)
 	{
 		delete[] this->numePosesor;
-		this->numePosesor = NULL;
+		//this->numePosesor = NULL;
 	}
 	if (this->nrInmatriculare) {
 		delete[] this->nrInmatriculare;
-		this->nrInmatriculare = NULL;
+		//this->nrInmatriculare = NULL;
 	}
 	if (this->status) {
 		delete[] this->status;
-		this->status = NULL;
+		//this->status = NULL;
 	}
 }
 
@@ -104,7 +104,9 @@ void Car::setNumePosesor(const char* n) {
 // setter
 
 void Car::setNrInmatriculare(const char* nrInmatriculare) {
-	if (nrInmatriculare) delete[]nrInmatriculare;
+	if (this->nrInmatriculare) {
+		delete[]this->nrInmatriculare;
+	}
 	this->nrInmatriculare = new char[strlen(nrInmatriculare) + 1];
 	strcpy_s(this->nrInmatriculare, strlen(nrInmatriculare) + 1, nrInmatriculare);
 }
@@ -113,7 +115,7 @@ void Car::setNrInmatriculare(const char* nrInmatriculare) {
 // setter
 
 void Car::setStatus(const char* status) {
-	if (status) delete[]status;
+	if (this->status) delete[]this->status;
 	this->status = new char[strlen(status) + 1];
 	strcpy_s(this->status, strlen(status) + 1, status);
 }
@@ -122,7 +124,7 @@ void Car::setStatus(const char* status) {
 // assignment operator
 
 Car& Car::operator =(const Car& e) {
-	if (this == &e) return *this; 
+	if (this == &e) return *this;
 	if (e.numePosesor) {
 		if (this->numePosesor)delete[]this->numePosesor;
 		this->numePosesor = new char[strlen(e.numePosesor) + 1];
@@ -151,6 +153,6 @@ bool Car::operator==(const Car& p) {
 //pt afisare
 ostream& operator<<(ostream& os, const Car& p)
 {
-	os << "Nume posesor: " << p.numePosesor << ", nr inmatriculare: " << p.nrInmatriculare << ", status: " << p.status;
+	os << "Nume posesor: " << p.numePosesor << "|| nr inmatriculare: " << p.nrInmatriculare << "|| status: " << p.status;
 	return os;
 }

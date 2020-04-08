@@ -1,25 +1,21 @@
 #pragma once
 #include "Car.h"
+#include "Repo.h"
 #include <list>
 #include <iterator>
-#include <string.h>
 #include <algorithm>
 
-using namespace std;
-
-class Repo
-{
+class Service {
 private:
-	list<Car> elem;
-
+	Repo r;
 public:
-	Repo();
-	void addElem(Car);
+	Service();
+	~Service();
+	void addElem(Car& c);
 	list<Car> getAll();
 	void delElem(Car);
-	bool findElem(Car);
-	Car getItemFromPos(int);
 	void updateElem(Car, const char*, const char*, const char*);
+	Car getItemFromPos(int);
+	bool findElem(Car);
 	int dim();
-	~Repo();
 };
