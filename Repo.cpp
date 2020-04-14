@@ -5,24 +5,35 @@ Repo::Repo()
 {
 }
 
-void Repo::addElem(Car c) {
-	elem.push_back(c);
+int Repo::addElem(Car c) {
+	list<Car>::iterator it;
+	int ok = 1;
+	for (it = elem.begin(); it != elem.end(); it++)
+		if (strcmp((*it).getNrInmatriculare(), c.getNrInmatriculare()) == 0)
+			ok = 0;
+	it = find(elem.begin(), elem.end(), c);
+	if (it == elem.end() and ok == 1)
+	{
+		elem.push_back(c);
+		return 0;
+	}
+	return -1;
 }
 
 list<Car> Repo::getAll() {
 	return elem;
 }
 
-void Repo::delElem(Car c) {
+int Repo::delElem(Car c) {
 	list<Car>::iterator it;
 	it = find(elem.begin(), elem.end(), c);
-	if (it != elem.end()) elem.erase(it);
-}
-
-void Repo::delAll() {
-	list<Car>::iterator it;
-	it = elem.begin();
-	while (it != elem.end()) elem.erase(it);
+	if (it != elem.end())
+	{
+		elem.erase(it);
+		return 0;
+	}
+	else
+		return -1;
 }
 
 bool Repo::findElem(Car c) {

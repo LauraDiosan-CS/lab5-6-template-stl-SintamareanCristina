@@ -12,9 +12,13 @@ private:
 public:
 	UI();
 	~UI();
+	UI(const Service&);
 	void printMenu();
-	void addElem(Service& s);
-	void getAll(Service& s);
-	void delElem(Service& s);
-	void updateElem(Service& s);
+	void addElem();
+	void getAll();
+	void delElem();
+	void updateElem();
+	void intrareParcare();
+	void iesireParcare();
+	void run();
 };

@@ -153,6 +153,27 @@ bool Car::operator==(const Car& p) {
 //pt afisare
 ostream& operator<<(ostream& os, const Car& p)
 {
-	os << "Nume posesor: " << p.numePosesor << "|| nr inmatriculare: " << p.nrInmatriculare << "|| status: " << p.status;
+	os << "Nume posesor: " << p.numePosesor << " || nr inmatriculare: " << p.nrInmatriculare << " || status: " << p.status;
 	return os;
+}
+
+//pt citire
+istream& operator>>(istream& is, Car& c)
+{
+	cout << "Nume posesor: ";
+	char* name = new char[20];
+	is >> name;
+	cout << "Nr inmatriculare: ";
+	char* nr = new char[20];
+	is >> nr;
+	cout << "Status: ";
+	char* status = new char[20];
+	is >> status;
+	c.setNumePosesor(name);
+	c.setNrInmatriculare(nr);
+	c.setStatus(status);
+	delete[] name;
+	delete[] nr;
+	delete[] status;
+	return is;
 }

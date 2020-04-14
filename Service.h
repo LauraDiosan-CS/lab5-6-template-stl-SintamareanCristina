@@ -8,14 +8,20 @@
 class Service {
 private:
 	Repo r;
+	int parking;
 public:
+	int n;
 	Service();
+	Service(const Repo&);
 	~Service();
-	void addElem(Car& c);
+	int addElem(Car c);
 	list<Car> getAll();
-	void delElem(Car);
-	void updateElem(Car, const char*, const char*, const char*);
+	int delElem(Car);
+	int updateElem(Car, const char*, const char*, const char*);
 	Car getItemFromPos(int);
 	bool findElem(Car);
 	int dim();
+	void setParking(int);
+	int intrareParcare(Car);
+	int iesireParcare(Car);
 };

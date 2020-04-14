@@ -9,18 +9,18 @@ using namespace std;
 
 class Repo
 {
-private:
+protected:
 	list<Car> elem;
 
 public:
 	Repo();
-	void addElem(Car);
+	int addElem(Car);
 	list<Car> getAll();
-	void delElem(Car);
-	void delAll();
+	int delElem(Car);
 	bool findElem(Car);
 	Car getItemFromPos(int);
 	void updateElem(Car, const char*, const char*, const char*);
 	int dim();
 	~Repo();
 };
+

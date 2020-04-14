@@ -1,5 +1,7 @@
 #pragma once
 #include <ostream>
+#include <iostream>
+#include <string>
 using namespace std;
 
 class Car {
@@ -21,5 +23,6 @@ public:
     Car& operator=(const Car& e);
     bool operator==(const Car& p);
     friend ostream& operator<<(ostream& os, const Car& p);
+    friend istream& operator>>(istream&, Car&);
 
 };

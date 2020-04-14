@@ -21,13 +21,13 @@
     <ClCompile Include="Car.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Repo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Service.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Repo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tests.cpp">
@@ -54,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RepoFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RepoTemplate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
