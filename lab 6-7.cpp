@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 	Repo repo;
-	Service s(repo); UI ui(s); RepoFile repoFile("Masini.txt");
+	Service s(repo); UI ui(s); 
 	tests();
 	ui.run();
 	return 0;

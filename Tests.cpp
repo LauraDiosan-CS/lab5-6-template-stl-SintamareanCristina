@@ -107,7 +107,7 @@ void testFunctionalitati() {
     assert(serv.iesireParcare(c2) == -1);
 }
 
-void testRepoFile() {
+/*void testRepoFile() {
     RepoFile repo("testRepoFile.txt");
     Car c1("Ana", "CJ20mar", "liber");
     Car c2("Bogdan", "CJ16bgd", "ocupat");
@@ -130,7 +130,7 @@ void testRepoFile() {
     repo.addElem(c1);
     repo.saveToFile();
     repo.loadFromFile("testRepoFile");
-}
+}*/
 
 void testRepoTemplate() {
     RepoTemplate<Car> repo;

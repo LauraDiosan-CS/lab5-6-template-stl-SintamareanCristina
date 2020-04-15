@@ -150,7 +150,6 @@
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="lab 6-7.cpp" />
     <ClCompile Include="Repo.cpp" />
-    <ClCompile Include="RepoFile.cpp" />
     <ClCompile Include="Service.cpp" />
     <ClCompile Include="Tests.cpp" />
     <ClCompile Include="UI.cpp" />
